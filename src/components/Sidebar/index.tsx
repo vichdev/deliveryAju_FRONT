@@ -2,6 +2,8 @@ import React from "react";
 import * as Styles from "./styles";
 import { AiOutlineClose } from "react-icons/ai";
 import { useApp } from "../../context/AppContext";
+import Input from "../Input";
+import { FiSearch } from "react-icons/fi";
 
 const Sidebar: React.FC = () => {
   const { sidebar, setSidebar } = useApp();
@@ -17,6 +19,7 @@ const Sidebar: React.FC = () => {
             }}
           />
         </Styles.SidebarHeader>
+        <Input placeholder="teste" label="Pesquisa" icon={<FiSearch />} />
       </Styles.SidebarWrapper>
     </Styles.SidebarContainer>
   );

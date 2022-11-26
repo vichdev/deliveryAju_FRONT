@@ -1,20 +1,14 @@
-import styled, { keyframes } from "styled-components";
-
-const sidebarAnimationFadeIn = keyframes`
-  0% {width: 0%}
-  100% {width: 100%;}
-`;
+import styled from "styled-components";
 
 export const SidebarContainer = styled.div<{ isSidebarOpen?: boolean }>`
-  width: 100%;
+  width: ${(props) => (props.isSidebarOpen ? "250px" : 0)};
   max-width: 60%;
+  overflow-x: hidden;
   height: 100vh;
   background-color: #5f5f5f;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
-  display: ${(props) => (props.isSidebarOpen ? "flex" : "none")};
-  transition: ${sidebarAnimationFadeIn} 0.7s ease-in-out;
-  animation-name: ${sidebarAnimationFadeIn};
+  transition: 0.2s ease-in-out;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 `;
